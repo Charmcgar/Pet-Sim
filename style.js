@@ -30,7 +30,7 @@ function checkPetStatus() {
     petImage.src = 'assets/pet-happy.png';
     messageDiv.textContent = 'Your pet is happy! Great job!';
   } else {
-    petImage.src = 'assets/pet-default.png';
+    petImage.src = 'assets/download.png';
     messageDiv.textContent = 'Your pet is doing okay.';
   }
 }
