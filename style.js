@@ -1,4 +1,4 @@
-javascript
+
 // Pet stats
 let happiness = 100;
 let hunger = 100;
