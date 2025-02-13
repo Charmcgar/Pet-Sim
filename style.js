@@ -73,4 +73,3 @@ setInterval(() => {
 
 // Initial stats update
 updateStats();
-
