@@ -1,1 +1,29 @@
-
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Pet Simulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Class Pet Simulator</h1>
+    <div class="pet-container">
+      <img id="pet-image" src="assets/pet-default.png" alt="Class Pet">
+      <div id="pet-status">
+        <p>Happiness: <span id="happiness">100</span></p>
+        <p>Hunger: <span id="hunger">100</span></p>
+      </div>
+    </div>
+    <div class="actions">
+      <button id="feed-btn">Feed</button>
+      <button id="play-btn">Play</button>
+      <button id="clean-btn">Clean</button>
+    </div>
+    <div id="message"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
