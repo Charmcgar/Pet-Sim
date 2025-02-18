@@ -6,6 +6,7 @@ let money = 0;
 // DOM elements
 const happinessDisplay = document.getElementById('happiness');
 const hungerDisplay = document.getElementById('hunger');
+const moneyDisplay = document.getElementById('money');
 const petImage = document.getElementById('pet-image');
 const messageDiv = document.getElementById('message');
 
