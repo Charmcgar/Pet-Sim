@@ -54,3 +54,28 @@ h1 {
   font-size: 18px;
   color: #333;
 }
+
+.shop {
+  margin-top: 20px;
+}
+
+.shop-item {
+  margin-bottom: 10px;
+}
+
+.shop-item p {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.buy-btn {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.buy-btn:hover {
+  background-color: #45a049;
+}
