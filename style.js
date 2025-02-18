@@ -1,7 +1,26 @@
+// Constants
+const MAX_STAT = 100;
+const MIN_STAT = 0;
+const FEED_INCREMENT = 10;
+const PLAY_INCREMENT = 10;
+const CLEAN_INCREMENT = 5;
+const HAPPINESS_DECREMENT = 2;
+const HUNGER_DECREMENT = 3;
+const UPDATE_INTERVAL = 5000; // 5 seconds
+const PET_IMAGES = {
+  SAD: 'assets/pet-sad.png',
+  HAPPY: 'assets/pet-happy.png',
+  OKAY: 'assets/download.png'
+};
+const PET_MESSAGES = {
+  SAD: 'Your pet is sad! Take better care of it!',
+  HAPPY: 'Your pet is happy! Great job!',
+  OKAY: 'Your pet is doing okay.'
+};
 
 // Pet stats
-let happiness = 100;
-let hunger = 100;
+let happiness = MAX_STAT;
+let hunger = MAX_STAT;
 
 // DOM elements
 const petImage = document.getElementById('pet-image');
@@ -23,54 +42,55 @@ function updateStats() {
 
 // Check pet status and change image/message
 function checkPetStatus() {
-  if (happiness <= 0 || hunger <= 0) {
-    petImage.src = 'assets/pet-sad.png';
-    messageDiv.textContent = 'Your pet is sad! Take better care of it!';
+  if (happiness <= MIN_STAT || hunger <= MIN_STAT) {
+    petImage.src = PET_IMAGES.SAD;
+    messageDiv.textContent = PET_MESSAGES.SAD;
   } else if (happiness >= 80 && hunger >= 80) {
-    petImage.src = 'assets/pet-happy.png';
-    messageDiv.textContent = 'Your pet is happy! Great job!';
+    petImage.src = PET_IMAGES.HAPPY;
+    messageDiv.textContent = PET_MESSAGES.HAPPY;
   } else {
-    petImage.src = 'assets/download.png';
-    messageDiv.textContent = 'Your pet is doing okay.';
+    petImage.src = PET_IMAGES.OKAY;
+    messageDiv.textContent = PET_MESSAGES.OKAY;
   }
+}
+
+// Helper function to update and cap stats
+function updateStat(stat, increment) {
+  stat += increment;
+  return Math.min(stat, MAX_STAT);
 }
 
 // Feed the pet
 feedBtn.addEventListener('click', () => {
-  if (hunger < 100) {
-    hunger += 10;
-    if (hunger > 100) hunger = 100;
+  if (hunger < MAX_STAT) {
+    hunger = updateStat(hunger, FEED_INCREMENT);
     updateStats();
   }
 });
 
 // Play with the pet
 playBtn.addEventListener('click', () => {
-  if (happiness < 100) {
-    happiness += 10;
-    if (happiness > 100) happiness = 100;
+  if (happiness < MAX_STAT) {
+    happiness = updateStat(happiness, PLAY_INCREMENT);
     updateStats();
   }
 });
 
 // Clean the pet
 cleanBtn.addEventListener('click', () => {
-  if (happiness < 100) {
-    happiness += 5;
-    if (happiness > 100) happiness = 100;
+  if (happiness < MAX_STAT) {
+    happiness = updateStat(happiness, CLEAN_INCREMENT);
     updateStats();
   }
 });
 
 // Pet stats degrade over time
 setInterval(() => {
-  console.log('Interval running'); // Add this line for debugging
-  happiness -= 2;
-  hunger -= 3;
-  if (happiness < 0) happiness = 0;
-  if (hunger < 0) hunger = 0;
+  console.log('Interval running'); // Debugging line
+  happiness = Math.max(happiness - HAPPINESS_DECREMENT, MIN_STAT);
+  hunger = Math.max(hunger - HUNGER_DECREMENT, MIN_STAT);
   updateStats();
-}, 5000); // Updates every 5 seconds
+}, UPDATE_INTERVAL);
 
 // Initial stats update
 updateStats();
