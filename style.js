@@ -69,7 +69,7 @@ buyBtns.forEach(btn => {
 
     if (money >= price) {
       money -= price;
-      if (item === 'food') {
+      if (item === '+food') {
         hunger += 20;
         if (hunger > 100) hunger = 100;
       } else if (item === 'toy') {
