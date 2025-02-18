@@ -53,8 +53,8 @@ playBtn.addEventListener('click', () => {
 });
 
 cleanBtn.addEventListener('click', () => {
-  if (happiness < 100) {
-    happiness += 5;
+  {
+    money += 1;
     updateStats();
   }
 });
