@@ -64,6 +64,7 @@ cleanBtn.addEventListener('click', () => {
 
 // Pet stats degrade over time
 setInterval(() => {
+  console.log('Interval running'); // Add this line for debugging
   happiness -= 2;
   hunger -= 3;
   if (happiness < 0) happiness = 0;
