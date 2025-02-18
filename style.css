@@ -69,11 +69,14 @@ h1 {
 }
 
 .buy-btn {
-  padding: 5px 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
   cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #28a745;
+  color: white;
 }
 
 .buy-btn:hover {
