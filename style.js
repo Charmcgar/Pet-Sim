@@ -18,6 +18,7 @@ const cleanBtn = document.getElementById('clean-btn');
 function updateStats() {
   happinessDisplay.textContent = happiness;
   hungerDisplay.textContent = hunger;
+  moneyDisplay.textContent = money;
   checkPetStatus();
 }
 
@@ -61,7 +62,6 @@ cleanBtn.addEventListener('click', () => {
 setInterval(() => {
   happiness -= 2;
   hunger -= 3;
-  money += 100;
   if (happiness < 0) happiness = 0;
   if (hunger < 0) hunger = 0;
   updateStats();
