@@ -15,6 +15,9 @@ const feedBtn = document.getElementById('feed-btn');
 const playBtn = document.getElementById('play-btn');
 const cleanBtn = document.getElementById('clean-btn');
 
+// Shop buttons
+const buyBtns = document.querySelectorAll('.buy-btn');
+
 // Update pet stats
 function updateStats() {
   happinessDisplay.textContent = happiness;
@@ -54,10 +57,30 @@ playBtn.addEventListener('click', () => {
 });
 
 cleanBtn.addEventListener('click', () => {
-  {
-    money += 1;
-    updateStats();
-  }
+  money += 1;
+  updateStats();
+});
+
+// Event listeners for shop buttons
+buyBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.getAttribute('data-item');
+    const price = parseInt(btn.getAttribute('data-price'));
+
+    if (money >= price) {
+      money -= price;
+      if (item === 'food') {
+        hunger += 20;
+        if (hunger > 100) hunger = 100;
+      } else if (item === 'toy') {
+        happiness += 20;
+        if (happiness > 100) happiness = 100;
+      }
+      updateStats();
+    } else {
+      messageDiv.textContent = "You don't have enough money!";
+    }
+  });
 });
 
 // Pet stats degrade over time
