@@ -60,7 +60,7 @@ cleanBtn.addEventListener('click', () => {
 setInterval(() => {
   happiness -= 2;
   hunger -= 3;
-  money = 100;
+  money += 100;
   if (happiness < 0) happiness = 0;
   if (hunger < 0) hunger = 0;
   updateStats();
