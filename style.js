@@ -23,7 +23,7 @@ function updateStats() {
 // Check pet status and change image/message
 function checkPetStatus() {
   if (happiness <= 0 || hunger <= 0) {
-    petImage.src = 'assets/pet-sad.png';
+    petImage.src = 'assets/mad-cat.png';
     messageDiv.textContent = 'Your pet is sad! Take better care of it!';
   } else if (happiness >= 80 && hunger >= 80) {
     petImage.src = 'assets/pet-happy.png';
