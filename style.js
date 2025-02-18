@@ -41,6 +41,7 @@ function checkPetStatus() {
 feedBtn.addEventListener('click', () => {
   if (hunger < 100) {
     hunger += 10;
+    money -= 2;
     updateStats();
   }
 });
