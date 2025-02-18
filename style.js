@@ -1,6 +1,7 @@
 // Pet stats
 let happiness = 100;
 let hunger = 100;
+let money = 0;
 
 // DOM elements
 const happinessDisplay = document.getElementById('happiness');
