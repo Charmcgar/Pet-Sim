@@ -34,6 +34,7 @@ function checkPetStatus() {
   if (happiness <= 0 || hunger <= 0) {
     petImage.src = 'assets/mad-cat.png';
     messageDiv.textContent = 'Your pet is miserable! Take better care of it you imbecile!';
+    reload();
   } else if (happiness >= 80 && hunger >= 80) {
     petImage.src = 'assets/happy-cat.png';
     messageDiv.textContent = 'Your pet is happy! Great job!';
