@@ -72,7 +72,7 @@ cleanBtn.addEventListener('click', () => {
     setTimeout(() => {
       canClean = true;
     }, 10000);
-       messageDiv.textContent = "HOLY, I SHAT MY SELF!";
+    messageDiv.textContent = "HOLY, I SHAT MY SELF!";
   } else {
     messageDiv.textContent = "WAIT!! Im sharting myself!";
   }
@@ -88,9 +88,11 @@ buyBtns.forEach(btn => {
       money -= price;
       if (item === 'food') {
         food += 5; // Add food when bought
+        messageDiv.textContent = "You bought 5 units of food!";
       } else if (item === 'toy') {
         happiness += 20;
         if (happiness > 100) happiness = 100;
+        messageDiv.textContent = "You bought a toy!";
       }
       updateStats();
     } else {
