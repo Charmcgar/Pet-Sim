@@ -15,6 +15,7 @@
         <p>Money: <span id="money"></span></p>
         <p>Happiness: <span id="happiness">100</span></p>
         <p>Hunger: <span id="hunger">100</span></p>
+        <p>Food: <span id="food">0</span></p> <!-- Add food display -->
       </div>
     </div>
     <div class="actions">
@@ -28,13 +29,13 @@
     <div class="shop">
       <h2>Shop</h2>
       <div class="shop-item">
-        <p> +5 food: <button onclick="buyItem('+food')">Buy</button></p>
+        <p> +5 food: <button class="buy-btn" data-item="+food" data-price="10">Buy</button></p> <!-- Fix button -->
       </div>
       <div class="shop-item">
-        <p>Item 2: <button onclick="buyItem('item2')">Buy</button></p>
+        <p>Item 2: <button class="buy-btn" data-item="item2" data-price="20">Buy</button></p>
       </div>
       <div class="shop-item">
-        <p>Item 3: <button onclick="buyItem('item3')">Buy</button></p>
+        <p>Item 3: <button class="buy-btn" data-item="item3" data-price="30">Buy</button></p>
       </div>
     </div>
   </div>
