@@ -2,12 +2,13 @@
 let happiness = 100;
 let hunger = 100;
 let money = 0;
-let food = 0;
+let food = 0; // Initialize food amount
 
 // DOM elements
 const happinessDisplay = document.getElementById('happiness');
 const hungerDisplay = document.getElementById('hunger');
 const moneyDisplay = document.getElementById('money');
+const foodDisplay = document.getElementById('food'); // Add food display
 const petImage = document.getElementById('pet-image');
 const messageDiv = document.getElementById('message');
 
@@ -24,6 +25,7 @@ function updateStats() {
   happinessDisplay.textContent = happiness;
   hungerDisplay.textContent = hunger;
   moneyDisplay.textContent = money;
+  foodDisplay.textContent = food; // Update food display
   checkPetStatus();
 }
 
@@ -43,10 +45,13 @@ function checkPetStatus() {
 
 // Event listeners for buttons
 feedBtn.addEventListener('click', () => {
-  if (hunger < 100) {
+  if (food > 0) {
     hunger += 10;
-    money -= 2;
+    food -= 1;
+    if (hunger > 100) hunger = 100;
     updateStats();
+  } else {
+    messageDiv.textContent = "You don't have enough food!";
   }
 });
 
@@ -71,8 +76,7 @@ buyBtns.forEach(btn => {
     if (money >= price) {
       money -= price;
       if (item === '+food') {
-        hunger += 20;
-        if (hunger > 100) hunger = 100;
+        food += 5; // Add food when bought
       } else if (item === 'toy') {
         happiness += 20;
         if (happiness > 100) happiness = 100;
