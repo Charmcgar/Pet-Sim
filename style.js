@@ -71,6 +71,7 @@ cleanBtn.addEventListener('click', () => {
     setTimeout(() => {
       canClean = true;
     }, 3000);
+       messageDiv.textContent = "HOLY SHIT I SHAT MY SELF!";
   } else {
     messageDiv.textContent = "You can only clean every 3 seconds!";
   }
