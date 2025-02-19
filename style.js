@@ -2,7 +2,7 @@
 let happiness = 100;
 let hunger = 100;
 let money = 10;
-let food = 0; // Initialize food amount
+let food = 5; // Initialize food amount
 
 // DOM elements
 const happinessDisplay = document.getElementById('happiness');
