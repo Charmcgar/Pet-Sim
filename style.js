@@ -34,7 +34,7 @@ function checkPetStatus() {
   if (happiness <= 0 || hunger <= 0) {
     petImage.src = 'assets/mad-cat.png';
     messageDiv.textContent = 'Your pet is miserable! Take better care of it you imbecile!';
-    reload();
+   location. reload(true);
   } else if (happiness >= 80 && hunger >= 80) {
     petImage.src = 'assets/happy-cat.png';
     messageDiv.textContent = 'Your pet is happy! Great job!';
@@ -47,7 +47,7 @@ function checkPetStatus() {
 // Event listeners for buttons
 feedBtn.addEventListener('click', () => {
   if (food > 0) {
-    hunger += 10;
+    hunger += 5;
     food -= 1;
     if (hunger > 100) hunger = 100;
     updateStats();
@@ -87,7 +87,7 @@ buyBtns.forEach(btn => {
     if (money >= price) {
       money -= price;
       if (item === '+food') {
-        food += 5; // Add food when bought
+        food += 1; // Add food when bought
         messageDiv.textContent = "You bought 5 units of food!";
       } else if (item === 'toy') {
         happiness += 20;
