@@ -72,7 +72,7 @@ cleanBtn.addEventListener('click', () => {
     setTimeout(() => {
       canClean = true;
     }, 10000);
-       messageDiv.textContent = "HOLY SHIT I SHAT MY SELF!";
+       messageDiv.textContent = "HOLY, I SHAT MY SELF!";
   } else {
     messageDiv.textContent = "WAIT!! Im sharting myself!";
   }
