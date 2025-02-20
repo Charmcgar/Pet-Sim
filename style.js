@@ -28,7 +28,7 @@ function updateStats() {
   hungerDisplay.textContent = hunger;
   moneyDisplay.textContent = money;
   foodDisplay.textContent = food; // Update food display
-   toysDisplay.textContent = food;
+   toysDisplay.textContent = toys;
   checkPetStatus();
 }
 
