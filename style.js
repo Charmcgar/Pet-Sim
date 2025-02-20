@@ -90,7 +90,7 @@ buyBtns.forEach(btn => {
     if (money >= price) {
       money -= price;
       if (item === '+food') {
-        food += 1; // Add food when bought
+        food += 1; 
         messageDiv.textContent = "You bought 5 units of food!";
       } else if (item === 'toys') {
         toys += 3;
