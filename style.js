@@ -92,10 +92,10 @@ buyBtns.forEach(btn => {
       if (item === '+food') {
         food += 1; // Add food when bought
         messageDiv.textContent = "You bought 5 units of food!";
-      } else if (item === 'toy') {
-        happiness += 20;
+      } else if (item === 'toys') {
+        toys += 3;
         if (happiness > 100) happiness = 100;
-        messageDiv.textContent = "You bought a toy!";
+        messageDiv.textContent = "You bought 3 toys!";
       }
       updateStats();
     } else {
