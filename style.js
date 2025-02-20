@@ -2,13 +2,15 @@
 let happiness = 100;
 let hunger = 100;
 let money = 10;
-let food = 5; // Initialize food amount
+let food = 5; 
+let toys = 5;
 
 // DOM elements
 const happinessDisplay = document.getElementById('happiness');
 const hungerDisplay = document.getElementById('hunger');
 const moneyDisplay = document.getElementById('money');
-const foodDisplay = document.getElementById('food'); // Add food display
+const foodDisplay = document.getElementById('food'); 
+const toysDisplay = document.getElementById('toys'); 
 const petImage = document.getElementById('pet-image');
 const messageDiv = document.getElementById('message');
 
@@ -59,6 +61,7 @@ feedBtn.addEventListener('click', () => {
 playBtn.addEventListener('click', () => {
   if (happiness < 100) {
     happiness += 10;
+     toys -= 1;
     updateStats();
   }
 });
