@@ -3,40 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pet Simulator by Un-Finite</title>
+  <title>Shop by Un-Finite</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Class Pet Simulator</h1>
-    <div class="pet-container">
-      <img id="pet-image" src="assets/download.png" alt="Class Pet">
-      <div id="pet-status">
-        <p>Money: <span id="money"></span></p>
-        <p>Happiness: <span id="happiness">100</span></p>
-        <p>Hunger: <span id="hunger">100</span></p>
-        <p>Food: <span id="food">0</span></p> 
-         <p>Toys: <span id="toys">0</span></p> 
-      </div>
-    </div>
-    <div class="actions">
-      <button id="feed-btn">Feed</button>
-      <button id="play-btn">Play</button>
-      <button id="clean-btn">Clean poop hole</button>
-    </div>
-    <div id="message"></div>
+    
+<script async
+  src="https://js.stripe.com/v3/buy-button.js">
+</script>
 
-    <!-- Shop Section -->
-    <div class="shop">
-      <h2>Shop</h2>
-      <div class="shop-item">
-        <p> +5 food: <button class="buy-btn" data-item="+food" data-price="2">$2</button></p> <!-- Fix button -->
-      </div>
-      <div class="shop-item">
-        <p> 3 Toys: <button class="buy-btn" data-item="item2" data-price="3">3$</button></p>
-      </div>
-      <div class="shop-item">
-        <p>Item 3: <button class="buy-btn" data-item="item3" data-price="30">Buy</button></p>
+<stripe-buy-button
+  buy-button-id="buy_btn_1R3zhpQLqRm2PVwUwDda5KuU"
+  publishable-key="pk_test_51R3zUNQLqRm2PVwUebCQSxnOTA7xCZUqPJHfMqNVqma5Dk6VLAiY5fAzlf4VcjRInas9t6WrzPsjr9ZovMXOdCCm00bwrhYmCF"
+>
+</stripe-buy-button>
       </div>
     </div>
   </div>
